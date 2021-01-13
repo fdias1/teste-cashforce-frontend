@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Logo></Logo>
+    <Aside></Aside>
+    <NotasFiscais></NotasFiscais>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Logo from './components/Logo'
+  import Aside from './components/Aside'
+  import NotasFiscais from './components/NotasFiscais'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      Logo,
+      Aside,
+      NotasFiscais,
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    display:grid;
+    grid-template-areas: 
+            "logo header"
+            "aside content";
+    grid-template-columns: 288px 1fr;
+    grid-template-rows: 80px 1fr;
+  }
 </style>
