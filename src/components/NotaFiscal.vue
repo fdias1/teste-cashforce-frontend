@@ -27,10 +27,8 @@ export default {
 <style>
     tr{
         border: 1px solid #DFE2EB;
-        box-sizing: border-box;
         border-radius: 20px;
-        margin:20px;
-        padding: 5px 15px;
+        padding: 7px 30px;
     }
 
     td{
@@ -40,7 +38,7 @@ export default {
         line-height: 18px;
         color:#4D5566;
         text-transform: uppercase;
-        padding: 5px 15px;
+        padding: 7px 30px;
     }
 
     .button-cell {

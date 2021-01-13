@@ -20,12 +20,12 @@
                 <th></th>
             </thead>
             <tbody>
-                <NotaFiscal></NotaFiscal>
                 <tr class="spacer"></tr>
                 <NotaFiscal></NotaFiscal>
                 <tr class="spacer"></tr>
                 <NotaFiscal></NotaFiscal>
                 <tr class="spacer"></tr>
+                <NotaFiscal></NotaFiscal>
             </tbody>
         </table>
     </div>
@@ -42,14 +42,6 @@
 </script>
 
 <style>
-    .cedente{
-        position:absolute;
-        top:30%;
-        left:30%;
-        width: 40%;
-        height: 40%;
-        background-color: #dd334444;
-    }
     .container{
         max-width: 1300px;
         display:flex;
@@ -91,11 +83,10 @@
     table {
         padding:0;
         border-collapse: collapse;
-          border-spacing: 0 1em;
     }
 
     th{
-        padding:16px
+        padding: 3px 30px
     }
 
     thead {
@@ -106,7 +97,7 @@
         line-height: 16px;
         text-transform: uppercase;
         color: #A1A8B8;
-        padding:16px
+        padding: 19px 30px 30px 0;
     }
 
     tr.spacer{
