@@ -2,22 +2,22 @@
   <div id="app">
     <Logo></Logo>
     <Aside></Aside>
-    <NotasFiscais></NotasFiscais>
+    <div class="frame">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
   import Logo from './components/Logo'
   import Aside from './components/Aside'
-  import NotasFiscais from './components/NotasFiscais'
 
   export default {
     name: 'App',
     components: {
       Logo,
       Aside,
-      NotasFiscais,
-    }
+    },
   }
 </script>
 
@@ -29,5 +29,8 @@
             "aside content";
     grid-template-columns: 288px 1fr;
     grid-template-rows: 80px 1fr;
+  }
+  .frame {
+    grid-area: content;
   }
 </style>

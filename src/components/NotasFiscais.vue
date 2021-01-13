@@ -9,7 +9,7 @@
                 Visualize as notas fiscais que você tem.
             </div>
         </div>
-        <table>
+        <table v-show="!showSpinner">
             <thead>
                 <th>Nota Fiscal</th>
                 <th>Sacado</th>
@@ -20,30 +20,50 @@
                 <th></th>
             </thead>
             <tbody>
-                <tr class="spacer"></tr>
-                <NotaFiscal></NotaFiscal>
-                <tr class="spacer"></tr>
-                <NotaFiscal></NotaFiscal>
-                <tr class="spacer"></tr>
-                <NotaFiscal></NotaFiscal>
+                <template v-for="notaFiscal in notasFiscais">
+                    <tr class="spacer" :key="`${notaFiscal.id}-spacer`"></tr>
+                    <NotaFiscal :key="notaFiscal.id" :notaFiscal="notaFiscal"></NotaFiscal>
+                </template>
             </tbody>
         </table>
+        <div class="spinner-container" v-show="showSpinner">
+            <Spinner  tamalho="100"></Spinner>
+        </div>
     </div>
 </template>
 <script>
     import NotaFiscal from './NotaFiscal'
-    
+    import api from '../services/api'
+    import Spinner from './Spinner'
+
     export default {
         components:{
             NotaFiscal,
+            Spinner
         },
-        name:'NotasFiscais'
+        name:'NotasFiscais',
+        data:function() {
+            return {
+                notasFiscais:[],
+                showSpinner:true,
+                }
+        },
+        async beforeMount(){
+            try {
+                const orders = await api.get('orders')
+                const notasFiscais = orders.data.retorno
+                this.notasFiscais = notasFiscais
+                this.showSpinner=false
+            } catch (err) {
+                alert('Algo deu errado, tente novamente mais tarde')
+                this.showSpinner=false
+            }
+        }
     }
 </script>
 
 <style>
     .container{
-        max-width: 1300px;
         display:flex;
         flex-direction: column;
         grid-area:content;
@@ -64,6 +84,7 @@
         flex-direction: row;
         padding-bottom:5px;
     }
+    
     .content-icon{
         width: 24px;
     }
@@ -80,9 +101,18 @@
         font-size: 14px;
     }
 
+    .spinner-container {
+        width: 100%;
+        height: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     table {
         padding:0;
         border-collapse: collapse;
+        white-space: nowrap;
     }
 
     th{

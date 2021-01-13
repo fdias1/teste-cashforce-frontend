@@ -1,5 +1,5 @@
 <template>
-    <div class="button">
+    <div class="button" @click="action()">
         <p class="button-label">
             <slot></slot>
         </p>
@@ -8,7 +8,10 @@
 
 <script>
 export default {
-    name:'BtnPadrao'
+    name:'BtnPadrao',
+    props:[
+        'action'
+    ]
 }
 </script>
 
