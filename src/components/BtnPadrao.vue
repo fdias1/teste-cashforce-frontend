@@ -21,6 +21,7 @@ export default {
         width: 165px;
         height: 32px;
         border: 1px solid #CAD3FF;
+        background-color:transparent;
         box-sizing: border-box;
         border-radius: 16px;
         cursor:pointer;

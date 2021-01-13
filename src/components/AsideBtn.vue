@@ -32,7 +32,7 @@ export default {
         width: 288px;
         height: 64px;
         display: flex;
-        background-color:#FFF;
+        background-color:transparent;
         flex-direction: row;
         padding-left: 21px;
         border-left:transparent solid 4px;
