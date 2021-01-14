@@ -9,7 +9,7 @@
         <td> 
             <div class="button-cell">  
                 <BtnPadrao :action="() => showProvider({...notaFiscal.provider,endereco})">Dados do cedente</BtnPadrao>
-                <InfoCedente :provider="currentProvider" v-show="showProviderBox" :close="() => showProviderBox=false"></InfoCedente>
+                <InfoCedente :provider="currentProvider" v-if="showProviderBox" :close="() => showProviderBox=false"></InfoCedente>
             </div>
         </td>
     </tr>
