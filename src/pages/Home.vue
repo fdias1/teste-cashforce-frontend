@@ -21,6 +21,7 @@
         padding:22px 48px;
         border-top: 1px #DFE2EB solid;
         padding:50px;
+        color:#021B51;
     }
     .home-title{
         margin:30px;
