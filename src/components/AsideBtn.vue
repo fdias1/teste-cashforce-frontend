@@ -1,5 +1,5 @@
 <template>
-  <div class="aside-btn" :class="{active}" @click="$emit('selectPage',label)">
+  <div class="aside-btn" :class="currentPage === page ? 'active':''" @click="$emit('selectPage',page)">
       <img :src="`${publicPath}icons/${iconFileName}`" alt="icon" class="icon">
       <div class="label"><slot></slot></div>
   </div>
@@ -9,9 +9,10 @@
 export default {
     name:'Aside',
     props:{
-        active: { type:Boolean},
+        currentPage: {},
         label:{},
-        iconFileName:{}
+        iconFileName:{},
+        page:{},
     },
     methods:{
         click() {
