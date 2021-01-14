@@ -10,13 +10,19 @@ Vue.config.productionTip = false
 const router = new vueRouter({
   routes:[
     {
+      name:'home',
       path:'/home',
       component:Home
     },
     {
+      name:'orders',
       path:'/orders',
       component:NotasFiscais
     },
+    {
+      path:"*",
+      redirect:'home'
+    }
   ]
 })
 
