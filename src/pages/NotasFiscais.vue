@@ -32,9 +32,9 @@
     </div>
 </template>
 <script>
-    import NotaFiscal from './NotaFiscal'
+    import NotaFiscal from '../components/NotaFiscal'
     import api from '../services/api'
-    import Spinner from './Spinner'
+    import Spinner from '../components/Spinner'
 
     export default {
         components:{
