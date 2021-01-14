@@ -1,5 +1,5 @@
 <template>
-  <div class="aside-btn" :class="currentPage === page ? 'active':''" @click="$emit('selectPage',page)">
+  <div class="aside-btn" :class="currentPage === page ? 'active':''" @click="click">
       <img :src="`${publicPath}icons/${iconFileName}`" alt="icon" class="icon">
       <div class="label"><slot></slot></div>
   </div>
@@ -9,15 +9,18 @@
 export default {
     name:'Aside',
     props:{
-        currentPage: {},
         label:{},
         iconFileName:{},
         page:{},
     },
     methods:{
         click() {
-            // 
-            console.log('click')
+            this.$router.push({name:this.page})
+        }
+    },
+    computed:{
+        currentPage() {
+            return this.$route.name
         }
     },
     data () {

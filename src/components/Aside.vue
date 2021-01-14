@@ -1,16 +1,13 @@
 <template>
-<div class="aside">
-    <AsideBtn @selectPage="selectPage" 
-    page="home" 
-    iconFileName='home.svg' 
-    :currentPage="currentPage">
-    Home</AsideBtn>
+<div class="aside side-shadow">
 
-    <AsideBtn @selectPage="selectPage" 
-    page="orders" 
-    iconFileName='deal.svg' 
-    :currentPage="currentPage">
-    Notas fiscais</AsideBtn>
+    <AsideBtn page="home" iconFileName='home.svg'>
+        Home
+    </AsideBtn>
+
+    <AsideBtn page="orders" iconFileName='deal.svg'>
+        Notas fiscais
+    </AsideBtn>
 
 </div>
 </template>
@@ -23,17 +20,6 @@
         components:{
             AsideBtn
         },
-        methods:{
-            selectPage(page) {
-                this.$router.push(page)
-                this.currentPage = page
-            }
-        },
-        data:function() {
-            return {
-                currentPage:'home'
-            }
-        }
     }
 </script>
 
@@ -45,9 +31,5 @@
         justify-content: flex-start;
         background-color: #FBFDFE;
         flex-direction: column;
-        -webkit-box-shadow: inset -30px 0px 30px -30px rgba(221,221,221,1);
-        -moz-box-shadow: inset -30px 0px 30px -30px rgba(221,221,221,1);
-        box-shadow: inset -30px 0px 30px -30px rgba(221,221,221,1);
-
     }
 </style>
