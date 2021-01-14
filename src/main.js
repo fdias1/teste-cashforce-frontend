@@ -2,20 +2,21 @@ import Vue from 'vue'
 import App from './App.vue'
 import vueRouter from 'vue-router'
 
-import NotasFiscais from './components/NotasFiscais'
+import NotasFiscais from './pages/NotasFiscais'
+import Home from './pages/Home'
 Vue.use(vueRouter)
 Vue.config.productionTip = false
 
 const router = new vueRouter({
   routes:[
     {
-      path:'/notas',
-      component:NotasFiscais
+      path:'/',
+      component:Home
     },
     {
-      path:'/',
-      redirect:'/notas'
-    }
+      path:'/orders',
+      component:NotasFiscais
+    },
   ]
 })
 
